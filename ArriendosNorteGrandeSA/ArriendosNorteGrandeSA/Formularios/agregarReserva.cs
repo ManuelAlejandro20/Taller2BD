@@ -42,7 +42,6 @@ namespace ArriendosNorteGrandeSA.Formularios
                 }
                 checkedListBox2.Items.Add(rut);
                 rut = "";
-                //r += reader.GetString(0) + "\n";
 
             }
             conexionBD.Close();
@@ -87,12 +86,99 @@ namespace ArriendosNorteGrandeSA.Formularios
         {
             if (checkedListBox2.CheckedItems.Count == 0)
             {
-                MessageBox.Show("Selecciona un cliente porfavor");
+                MessageBox.Show("Selecciona un cliente porfavor", "Mensaje",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                return;
             }
             if (listBox1.Items.Count == 0) {
-                MessageBox.Show("Selecciona un vehículo porfavor");
+                MessageBox.Show("Selecciona un vehículo porfavor", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
-        
+            if (dateTimePicker1.Value > dateTimePicker2.Value) {
+                MessageBox.Show("Selecciona una fecha de inicio superior a la de término porfavor ", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            string cadena = "server=localhost;port=3306;userid=root;password=admin123;database=mysql";
+            string rutStr = "";
+            string patente = "";
+
+            List<string> patentes = new List<string>();
+            
+            int precioFinal = 0;
+
+            foreach (string s in checkedListBox2.CheckedItems) {
+                rutStr = s.Replace(".", "");
+                rutStr = rutStr.Replace("-", "");
+            }
+            foreach (string s in listBox1.Items) {
+                foreach (char ch in s) {
+                    if (ch == ' ') {
+                        break;
+                    }
+                    patente = patente + ch;
+                }
+                patentes.Add(patente);
+                foreach (DataGridViewRow row in dataGridView1.Rows)
+                {
+                    if (row.Cells["Patente"].Value.ToString() == patente) {
+                        precioFinal += Convert.ToInt32(row.Cells["PrecioAlquilerDiario"].Value.ToString());
+                        precioFinal += Convert.ToInt32(row.Cells["LitrosGasolina"].Value.ToString()) * 1000;
+                    } 
+                }
+                patente = "";
+            }
+
+            int rut = Convert.ToInt32(rutStr);
+            string fechaInicio = dateTimePicker1.Value.ToString("yyyy-MM-dd");
+            string fechaFinal = dateTimePicker2.Value.ToString("yyyy-MM-dd");
+
+            string insertar = "insert into vehiculosnortegrandedb.reserva(clienteRut, precio_final, fecha_inicio, fecha_final)" +
+                              "value" +
+                              "(" + rut + "," + precioFinal + "," + "'" + fechaInicio + "'" + "," + "'" + fechaFinal + "'" + ")";
+
+            //begin
+            MySqlConnection conexionBD = new MySqlConnection(cadena);
+            conexionBD.Open();
+            MySqlCommand cmd = new MySqlCommand(insertar, conexionBD);
+            cmd.ExecuteNonQuery();
+         
+            int numRes = 0;
+
+            string consulta = "select numero_reserva from vehiculosnortegrandedb.reserva where clienterut =" + rut;
+
+            conexionBD.Close();
+            //End
+
+            //Begin
+            conexionBD = new MySqlConnection(cadena);
+            conexionBD.Open();
+            cmd = new MySqlCommand(consulta, conexionBD);
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read()) {
+                numRes = Convert.ToInt32(reader.GetString(0));
+            }
+            conexionBD.Close();
+            //End
+
+
+            string update = "";
+
+            for (int i = 0; i < patentes.Count; i++) {
+                conexionBD = new MySqlConnection(cadena);
+                conexionBD.Open();
+
+                update = "update vehiculosnortegrandedb.vehiculo" + " " +
+                         "set vehiculosnortegrandedb.vehiculo.reservanumero_reserva = " + numRes + " "+
+                         "where vehiculosnortegrandedb.vehiculo.patente =  '" + patentes[i] + "';";
+                cmd = new MySqlCommand(update, conexionBD);
+                cmd.ExecuteNonQuery();
+
+                conexionBD.Close();
+            }
+
+            MessageBox.Show("Reserva realizada", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            this.Close();
+
         }
 
         private void checkedListBox2_SelectedIndexChanged(object sender, EventArgs e)

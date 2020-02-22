@@ -34,8 +34,10 @@
             this.reservaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarReservaNuevaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarReservaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.button1 = new System.Windows.Forms.Button();
             this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button1 = new System.Windows.Forms.Button();
+            this.estadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.insertarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,7 +56,9 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.reservaToolStripMenuItem,
-            this.consultasToolStripMenuItem});
+            this.consultasToolStripMenuItem,
+            this.estadToolStripMenuItem,
+            this.insertarToolStripMenuItem});
             resources.ApplyResources(this.menuStrip1, "menuStrip1");
             this.menuStrip1.Name = "menuStrip1";
             // 
@@ -78,6 +82,12 @@
             resources.ApplyResources(this.eliminarReservaToolStripMenuItem, "eliminarReservaToolStripMenuItem");
             this.eliminarReservaToolStripMenuItem.Click += new System.EventHandler(this.eliminarReservaToolStripMenuItem_Click);
             // 
+            // consultasToolStripMenuItem
+            // 
+            this.consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
+            resources.ApplyResources(this.consultasToolStripMenuItem, "consultasToolStripMenuItem");
+            this.consultasToolStripMenuItem.Click += new System.EventHandler(this.consultasToolStripMenuItem_Click);
+            // 
             // button1
             // 
             resources.ApplyResources(this.button1, "button1");
@@ -85,11 +95,16 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // consultasToolStripMenuItem
+            // estadToolStripMenuItem
             // 
-            this.consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
-            resources.ApplyResources(this.consultasToolStripMenuItem, "consultasToolStripMenuItem");
-            this.consultasToolStripMenuItem.Click += new System.EventHandler(this.consultasToolStripMenuItem_Click);
+            this.estadToolStripMenuItem.Name = "estadToolStripMenuItem";
+            resources.ApplyResources(this.estadToolStripMenuItem, "estadToolStripMenuItem");
+            this.estadToolStripMenuItem.Click += new System.EventHandler(this.estadToolStripMenuItem_Click);
+            // 
+            // insertarToolStripMenuItem
+            // 
+            this.insertarToolStripMenuItem.Name = "insertarToolStripMenuItem";
+            resources.ApplyResources(this.insertarToolStripMenuItem, "insertarToolStripMenuItem");
             // 
             // Vista1
             // 
@@ -117,6 +132,8 @@
         private System.Windows.Forms.ToolStripMenuItem eliminarReservaToolStripMenuItem;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ToolStripMenuItem consultasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem estadToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem insertarToolStripMenuItem;
     }
 }
 

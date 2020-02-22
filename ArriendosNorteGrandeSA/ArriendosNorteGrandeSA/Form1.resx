@@ -156,18 +156,6 @@
   <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <data name="agregarReservaNuevaToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>191, 22</value>
-  </data>
-  <data name="agregarReservaNuevaToolStripMenuItem.Text" xml:space="preserve">
-    <value>Agregar nueva reserva</value>
-  </data>
-  <data name="eliminarReservaToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>191, 22</value>
-  </data>
-  <data name="eliminarReservaToolStripMenuItem.Text" xml:space="preserve">
-    <value>Eliminar reserva</value>
-  </data>
   <data name="reservaToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>59, 20</value>
   </data>
@@ -179,6 +167,18 @@
   </data>
   <data name="consultasToolStripMenuItem.Text" xml:space="preserve">
     <value>Consultas</value>
+  </data>
+  <data name="estadToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>79, 20</value>
+  </data>
+  <data name="estadToolStripMenuItem.Text" xml:space="preserve">
+    <value>Estadísticas</value>
+  </data>
+  <data name="insertarToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>58, 20</value>
+  </data>
+  <data name="insertarToolStripMenuItem.Text" xml:space="preserve">
+    <value>Insertar</value>
   </data>
   <data name="menuStrip1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
@@ -203,6 +203,18 @@
   </data>
   <data name="&gt;&gt;menuStrip1.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="agregarReservaNuevaToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>191, 22</value>
+  </data>
+  <data name="agregarReservaNuevaToolStripMenuItem.Text" xml:space="preserve">
+    <value>Agregar nueva reserva</value>
+  </data>
+  <data name="eliminarReservaToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>191, 22</value>
+  </data>
+  <data name="eliminarReservaToolStripMenuItem.Text" xml:space="preserve">
+    <value>Eliminar reserva</value>
   </data>
   <data name="button1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -265,6 +277,18 @@
     <value>consultasToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;consultasToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;estadToolStripMenuItem.Name" xml:space="preserve">
+    <value>estadToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;estadToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;insertarToolStripMenuItem.Name" xml:space="preserve">
+    <value>insertarToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;insertarToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

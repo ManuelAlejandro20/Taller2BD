@@ -81,7 +81,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(515, 151);
+            this.label3.Location = new System.Drawing.Point(267, 150);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(102, 13);
             this.label3.TabIndex = 6;
@@ -91,7 +91,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(263, 151);
+            this.label4.Location = new System.Drawing.Point(504, 150);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(112, 13);
             this.label4.TabIndex = 8;
@@ -110,7 +110,7 @@
             // dateTimePicker1
             // 
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(623, 149);
+            this.dateTimePicker1.Location = new System.Drawing.Point(375, 148);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(92, 20);
             this.dateTimePicker1.TabIndex = 10;
@@ -118,7 +118,7 @@
             // dateTimePicker2
             // 
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(381, 149);
+            this.dateTimePicker2.Location = new System.Drawing.Point(622, 148);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(92, 20);
             this.dateTimePicker2.TabIndex = 11;
@@ -143,7 +143,8 @@
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(588, 94);
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.Size = new System.Drawing.Size(571, 94);
             this.dataGridView1.TabIndex = 12;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
@@ -151,16 +152,16 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(818, 35);
+            this.listBox1.Location = new System.Drawing.Point(801, 35);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(123, 160);
+            this.listBox1.Size = new System.Drawing.Size(169, 160);
             this.listBox1.TabIndex = 13;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged_1);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(815, 19);
+            this.label5.Location = new System.Drawing.Point(798, 19);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(126, 13);
             this.label5.TabIndex = 14;
@@ -168,9 +169,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(818, 201);
+            this.button2.Location = new System.Drawing.Point(801, 201);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(123, 23);
+            this.button2.Size = new System.Drawing.Size(169, 23);
             this.button2.TabIndex = 15;
             this.button2.Text = "Borrar Vehículo";
             this.button2.UseVisualStyleBackColor = true;
@@ -191,6 +192,7 @@
             this.Modelo.Frozen = true;
             this.Modelo.HeaderText = "Modelo";
             this.Modelo.Name = "Modelo";
+            this.Modelo.ReadOnly = true;
             this.Modelo.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Modelo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.Modelo.Width = 75;
@@ -200,6 +202,7 @@
             this.Marca.Frozen = true;
             this.Marca.HeaderText = "Marca";
             this.Marca.Name = "Marca";
+            this.Marca.ReadOnly = true;
             this.Marca.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Marca.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.Marca.Width = 75;
@@ -209,6 +212,7 @@
             this.NúmeroMotor.Frozen = true;
             this.NúmeroMotor.HeaderText = "NúmeroMotor";
             this.NúmeroMotor.Name = "NúmeroMotor";
+            this.NúmeroMotor.ReadOnly = true;
             this.NúmeroMotor.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.NúmeroMotor.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.NúmeroMotor.Width = 75;
@@ -218,15 +222,17 @@
             this.Color.Frozen = true;
             this.Color.HeaderText = "Color";
             this.Color.Name = "Color";
+            this.Color.ReadOnly = true;
             this.Color.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Color.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Color.Width = 50;
+            this.Color.Width = 75;
             // 
             // PrecioAlquilerDiario
             // 
             this.PrecioAlquilerDiario.Frozen = true;
             this.PrecioAlquilerDiario.HeaderText = "PrecioAlquilerDiario";
             this.PrecioAlquilerDiario.Name = "PrecioAlquilerDiario";
+            this.PrecioAlquilerDiario.ReadOnly = true;
             this.PrecioAlquilerDiario.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // LitrosGasolina
@@ -234,6 +240,7 @@
             this.LitrosGasolina.Frozen = true;
             this.LitrosGasolina.HeaderText = "LitrosGasolina";
             this.LitrosGasolina.Name = "LitrosGasolina";
+            this.LitrosGasolina.ReadOnly = true;
             this.LitrosGasolina.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.LitrosGasolina.Width = 75;
             // 
@@ -242,10 +249,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
-            this.ClientSize = new System.Drawing.Size(1007, 237);
+            this.ClientSize = new System.Drawing.Size(1047, 237);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.dateTimePicker1);

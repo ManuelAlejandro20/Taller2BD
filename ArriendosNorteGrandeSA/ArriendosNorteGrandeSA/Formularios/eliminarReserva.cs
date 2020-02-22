@@ -35,8 +35,32 @@ namespace ArriendosNorteGrandeSA.Formularios
         private void button1_Click(object sender, EventArgs e)
         {
             if (listBox1.Items.Count == 0) {
-                MessageBox.Show("Escoge una reserva para eliminar porfavor");
+                MessageBox.Show("Escoge una reserva para eliminar porfavor", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
+            if (dataGridView1.SelectedRows.Count != 0)
+            {
+                DataGridViewRow row = dataGridView1.SelectedRows[0];
+                string numRes = row.Cells[0].Value.ToString();
+
+                string delete = "delete from vehiculosnortegrandedb.reserva where vehiculosnortegrandedb.reserva.numero_reserva= '" + numRes + "'";
+                string cadena = "server=localhost;port=3306;userid=root;password=admin123;database=mysql";
+
+                MySqlConnection conexionBD = new MySqlConnection(cadena);
+                
+                //begin
+                conexionBD.Open();
+                MySqlCommand cmd = new MySqlCommand(delete, conexionBD);
+                cmd.ExecuteNonQuery();
+                conexionBD.Close();
+                // end
+
+                MessageBox.Show("Reserva eliminada", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                this.Close();
+
+            }
+
+
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -53,9 +77,15 @@ namespace ArriendosNorteGrandeSA.Formularios
 
                 MySqlCommand cmd = new MySqlCommand(str, conexionBD);
                 MySqlDataReader reader = cmd.ExecuteReader();
+
+                DateTime fechaInicio;
+                DateTime fechaFinal;
+
                 while (reader.Read())
                 {
-                    dataGridView1.Rows.Add(reader.GetString(0), reader.GetString(3), reader.GetString(1), reader.GetString(2));
+                    fechaInicio = Convert.ToDateTime(reader.GetString(1));
+                    fechaFinal = Convert.ToDateTime(reader.GetString(2));
+                    dataGridView1.Rows.Add(reader.GetString(0), reader.GetString(3), fechaInicio.ToString("dd-MM-yyyy"), fechaFinal.ToString("dd-MM-yyyy"));
                 }
                 conexionBD.Close();
             }
@@ -92,10 +122,10 @@ namespace ArriendosNorteGrandeSA.Formularios
             string resVeh = "";
             while (reader.Read())
             {
-                //Console.WriteLine(reader.GetString(0));
+                
                 resVeh = reader.GetString(0) + "  " + reader.GetString(1)+ "  " + reader.GetString(2) + "  " + reader.GetString(4);
                 listBox1.Items.Insert(0, resVeh);
-                //dataGridView1.Rows.Add(reader.GetString(3), reader.GetString(1), reader.GetString(2));
+                
             }
             conexionBD.Close();
         }

@@ -50,7 +50,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Clases\AgregarReserva.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,6 +61,12 @@
     </Compile>
     <Compile Include="Formularios\agregarReserva.Designer.cs">
       <DependentUpon>agregarReserva.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\consultaCuatro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\consultaCuatro.Designer.cs">
+      <DependentUpon>consultaCuatro.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\consultas.cs">
       <SubType>Form</SubType>
@@ -75,6 +80,12 @@
     <Compile Include="Formularios\eliminarReserva.Designer.cs">
       <DependentUpon>eliminarReserva.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\estadisticas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\estadisticas.Designer.cs">
+      <DependentUpon>estadisticas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -83,11 +94,17 @@
     <EmbeddedResource Include="Formularios\agregarReserva.resx">
       <DependentUpon>agregarReserva.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\consultaCuatro.resx">
+      <DependentUpon>consultaCuatro.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\consultas.resx">
       <DependentUpon>consultas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\eliminarReserva.resx">
       <DependentUpon>eliminarReserva.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\estadisticas.resx">
+      <DependentUpon>estadisticas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

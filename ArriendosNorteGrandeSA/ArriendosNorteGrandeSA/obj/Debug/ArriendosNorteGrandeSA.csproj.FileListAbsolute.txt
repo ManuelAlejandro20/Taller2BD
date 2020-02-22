@@ -17,3 +17,5 @@ C:\Users\Manolo\source\repos\ArriendosNorteGrandeSA\ArriendosNorteGrandeSA\obj\D
 C:\Users\Manolo\source\repos\ArriendosNorteGrandeSA\ArriendosNorteGrandeSA\obj\Debug\ArriendosNorteGrandeSA.Formularios.agregarReserva.resources
 C:\Users\Manolo\source\repos\ArriendosNorteGrandeSA\ArriendosNorteGrandeSA\obj\Debug\ArriendosNorteGrandeSA.Formularios.eliminarReserva.resources
 C:\Users\Manolo\source\repos\ArriendosNorteGrandeSA\ArriendosNorteGrandeSA\obj\Debug\ArriendosNorteGrandeSA.Formularios.consultas.resources
+C:\Users\Manolo\source\repos\ArriendosNorteGrandeSA\ArriendosNorteGrandeSA\obj\Debug\ArriendosNorteGrandeSA.Formularios.estadisticas.resources
+C:\Users\Manolo\source\repos\ArriendosNorteGrandeSA\ArriendosNorteGrandeSA\obj\Debug\ArriendosNorteGrandeSA.Formularios.consultaCuatro.resources

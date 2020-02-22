@@ -65,5 +65,11 @@ namespace ArriendosNorteGrandeSA
             Formularios.consultas consultas = new Formularios.consultas();
             consultas.ShowDialog();
         }
+
+        private void estadToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Formularios.estadisticas estadisticas = new Formularios.estadisticas();
+            estadisticas.ShowDialog();
+        }
     }
 }
