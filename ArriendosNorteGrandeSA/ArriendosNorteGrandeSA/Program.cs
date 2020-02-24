@@ -16,6 +16,7 @@ namespace ArriendosNorteGrandeSA
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
             Application.Run(new Vista1());
         }
     }

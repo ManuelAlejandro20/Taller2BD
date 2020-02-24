@@ -35,21 +35,22 @@
             this.agregarReservaNuevaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarReservaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.button1 = new System.Windows.Forms.Button();
             this.estadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.insertarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox1
             // 
             this.textBox1.BackColor = System.Drawing.SystemColors.Menu;
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.CausesValidation = false;
             this.textBox1.Cursor = System.Windows.Forms.Cursors.Arrow;
             resources.ApplyResources(this.textBox1, "textBox1");
-            this.textBox1.ForeColor = System.Drawing.Color.MediumSeaGreen;
+            this.textBox1.ForeColor = System.Drawing.Color.Orange;
             this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // menuStrip1
@@ -88,13 +89,6 @@
             resources.ApplyResources(this.consultasToolStripMenuItem, "consultasToolStripMenuItem");
             this.consultasToolStripMenuItem.Click += new System.EventHandler(this.consultasToolStripMenuItem_Click);
             // 
-            // button1
-            // 
-            resources.ApplyResources(this.button1, "button1");
-            this.button1.Name = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // estadToolStripMenuItem
             // 
             this.estadToolStripMenuItem.Name = "estadToolStripMenuItem";
@@ -105,13 +99,22 @@
             // 
             this.insertarToolStripMenuItem.Name = "insertarToolStripMenuItem";
             resources.ApplyResources(this.insertarToolStripMenuItem, "insertarToolStripMenuItem");
+            this.insertarToolStripMenuItem.Click += new System.EventHandler(this.insertarToolStripMenuItem_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::ArriendosNorteGrandeSA.Properties.Resources.Travel_BMV_icon;
+            resources.ApplyResources(this.pictureBox1, "pictureBox1");
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // Vista1
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -119,6 +122,7 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -130,10 +134,10 @@
         private System.Windows.Forms.ToolStripMenuItem reservaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem agregarReservaNuevaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eliminarReservaToolStripMenuItem;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ToolStripMenuItem consultasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem estadToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem insertarToolStripMenuItem;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

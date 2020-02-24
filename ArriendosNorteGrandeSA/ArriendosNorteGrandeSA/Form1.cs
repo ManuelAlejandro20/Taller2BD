@@ -45,7 +45,20 @@ namespace ArriendosNorteGrandeSA
             MessageBox.Show(r);
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e) { 
+        public void showInsert() {
+
+            ToolStripMenuItem cliente = new ToolStripMenuItem("Cliente");
+            ToolStripMenuItem vehiculo = new ToolStripMenuItem("Vehículo");
+            
+            menuStrip1.Items.RemoveAt(3);
+            menuStrip1.Items.Add(cliente);
+            menuStrip1.Items.Add(vehiculo);
+            menuStrip1.Items.Add("Salir", null, salirToolStripMenuItem_Click);
+
+            cliente.DropDownItems.Add("Agregar nuevo cliente", null, agregarClienteToolStripMenuItem_Click);
+            cliente.DropDownItems.Add("Eliminar cliente", null, eliminarClienteToolStripMenuItem_Click);
+            vehiculo.DropDownItems.Add("Agregar nuevo vehículo", null, agregarVehiculoToolStripMenuItem_Click);
+            vehiculo.DropDownItems.Add("Eliminar vehículo", null, eliminarVehiculoToolStripMenuItem_Click);
         }
 
         private void agregarReservaNuevaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -70,6 +83,49 @@ namespace ArriendosNorteGrandeSA
         {
             Formularios.estadisticas estadisticas = new Formularios.estadisticas();
             estadisticas.ShowDialog();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void insertarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Formularios.auth a = new Formularios.auth(this);
+            a.ShowDialog();
+            
+        }
+
+        private void agregarClienteToolStripMenuItem_Click(object sender, EventArgs e) {
+            Formularios.agregarCliente ac = new Formularios.agregarCliente();
+            ac.ShowDialog();
+        }
+        private void eliminarClienteToolStripMenuItem_Click(object sender, EventArgs e) {
+            Formularios.eliminarCliente ec = new Formularios.eliminarCliente();
+            ec.ShowDialog();
+        }
+        private void agregarVehiculoToolStripMenuItem_Click(object sender, EventArgs e) {
+            Formularios.agregarVehiculo av = new Formularios.agregarVehiculo();
+            av.ShowDialog();
+        }
+        private void eliminarVehiculoToolStripMenuItem_Click(object sender, EventArgs e) {
+            Formularios.eliminarVehiculo ev = new Formularios.eliminarVehiculo();
+            ev.ShowDialog();
+        
+        }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            menuStrip1.Items.RemoveAt(3);
+            menuStrip1.Items.RemoveAt(3);
+            menuStrip1.Items.RemoveAt(3);
+            menuStrip1.Items.Add("Modificar clientes / vehículos", null, insertarToolStripMenuItem_Click);
         }
     }
 }

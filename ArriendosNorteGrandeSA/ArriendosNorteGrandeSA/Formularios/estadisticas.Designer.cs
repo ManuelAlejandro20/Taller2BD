@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(estadisticas));
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -37,6 +38,8 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.DisplayMember = "sdsd";
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "Cantidad de reservas hechas por un cliente este mes",
@@ -48,9 +51,8 @@
             "Vehículos que no han participado en reservas el último año"});
             this.comboBox1.Location = new System.Drawing.Point(51, 27);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(302, 21);
+            this.comboBox1.Size = new System.Drawing.Size(312, 21);
             this.comboBox1.TabIndex = 0;
-            this.comboBox1.Text = "Elige una estadística a desplegar...";
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label1
@@ -103,6 +105,9 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "estadisticas";
             this.Text = "Estadísticas";
             this.ResumeLayout(false);

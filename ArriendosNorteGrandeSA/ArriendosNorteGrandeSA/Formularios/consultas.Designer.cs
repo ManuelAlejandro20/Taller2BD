@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(consultas));
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -38,6 +39,7 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "Datos de un cliente",
@@ -46,12 +48,11 @@
             "Reservas vígentes y vehículos asociados",
             "Datos de un cliente si se encuentra una reserva vigente",
             "Datos de un cliente que avaló a otro",
-            "Datos de un cliente avalado"});
+            "Datos de ó los clientes avalados por otro cliente"});
             this.comboBox1.Location = new System.Drawing.Point(51, 27);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(302, 21);
             this.comboBox1.TabIndex = 0;
-            this.comboBox1.Text = "Escoge una consulta...";
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // textBox1
@@ -118,6 +119,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "consultas";
             this.Text = "Consultas";

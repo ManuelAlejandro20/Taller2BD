@@ -59,6 +59,7 @@ namespace ArriendosNorteGrandeSA.Formularios
             }
 
             dataGridView1.RowsDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
 
@@ -176,7 +177,7 @@ namespace ArriendosNorteGrandeSA.Formularios
                 conexionBD.Close();
             }
 
-            MessageBox.Show("Reserva realizada", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            MessageBox.Show("Reserva realizada", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             this.Close();
 
         }

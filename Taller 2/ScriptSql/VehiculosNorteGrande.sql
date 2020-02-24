@@ -31,22 +31,22 @@ insert into cliente(Rut, Nombre, Direccion, Telefono_domicilio, Telefono_movil, 
     (123456789, 'Ana Mercedes Montalban Flores','Osorno 3785', 1234,5678, 199678760),
     (199678760, 'Manuel Alejandro Trigo Montalban', 'Palestina 1315', 8888, 9999, 123456789),
     (987654321, 'Naomi Alison Andrea Chavez Osorio', 'Longitudinal 6', 6666, 7777, 199678760),
-    (111123333, 'Manuel Jesus Trigo Taborga', 'Psje Davila 580',1111,2222, 987654321);
-
+    (111123333, 'Manuel Jesus Trigo Taborga', 'Psje Davila 580',1111,2222, 987654321),
+    (147258369, "Celeste Rojelia Blanco Negrete", "Los Colores 1234", 123456, 976002971, 987654321),
+    (111111111, 'Marisol Carolina Torres Arriagada','Ese 11',234561222,123456789,199678760),
+	(369258147, 'Karla Pamela Salgado Montalvan', 'Delicias 1', 11223344, 976002971, 199678760),
+    (789456123, 'Maria Teresa Salgado Montalvan', 'Osorno 3785', 1234556, 976002971, 369258147);
+        
 insert into vehiculo(Patente, Modelo, Marca, Numero_motor, Color, Precio_alquiler_diario, Litros_gasolina, ReservaNumero_reserva)
 	values
-    ("ZX6969", 'Toyota 560','Toyota', 12,"Rojo", 20000, 23, 3),
+    ("ZX6969", 'Toyota 560','Toyota', 12,"Rojo", 20000, 23, null),
     ("WE1234", 'Mazda 1','Mazda', 1,"Verde", 30000, 23, null),
     ("DKJR11", 'Chevere 69','Chevere', 10,"Azul", 25000, 27, null),
-    ("AL2019", 'El faso 420','Toyota', 121,"Morado", 40000, 28, 12),
-	('XX1231', 'Honda X', 'Honda', 111, 'Azul', 30000, 10, 3),
+    ("AL2019", 'El faso 420','Toyota', 121,"Morado", 40000, 28, null),
+	('XX1231', 'Honda X', 'Honda', 111, 'Azul', 30000, 10, null),
 	('KKKK99', 'GranT 99', 'GT', 3, 'Celeste', 5000, 1, null),
     ('KKKK88', 'GranK 88', 'GT', 7, 'Negro', 1000, 17, null),
-    ('KT1998', 'Chevrolet 11', 'Chevrolet', 11, 'Blanco', 5000, 1, 12);
-
-insert into reserva(ClienteRut, Precio_final, Fecha_final, Fecha_inicio)
-	values
-    (199678760, 62400, '2020-02-28', '2020-02-22');
+    ('KT1998', 'Chevrolet 11', 'Chevrolet', 11, 'Blanco', 5000, 1, null);
 
 alter table Cliente 
 	add constraint FKCliente983742 foreign key (ClienteRut) references Cliente (Rut) on delete cascade on update cascade;
@@ -56,6 +56,20 @@ alter table Reserva
 
 alter table Vehiculo 
 	add constraint FKVehiculo454397 foreign key (ReservaNumero_reserva) references Reserva (Numero_reserva) on delete set null;
+
+select *
+from cliente;
+
+insert into cliente(Rut, Nombre, Direccion, Telefono_domicilio, Telefono_movil, ClienteRut)
+	values
+	(987654321, 'Naomi Alison Andrea Chavez Osorio', 'Longitudinal 6', 6666, 7777, 199678760),
+    (111123333, 'Manuel Jesus Trigo Taborga', 'Psje Davila 580',1111,2222, 987654321),
+    (147258369, "Celeste Rojelia Blanco Negrete", "Los Colores 1234", 123456, 976002971, 987654321),
+	(369258147, 'Karla Pamela Salgado Montalvan', 'Delicias 1', 11223344, 976002971, 199678760);
+
+insert into reserva(ClienteRut, Precio_final, Fecha_final, Fecha_inicio)
+	values
+    (199678760, 62400, '2020-02-28', '2020-02-22');
     
 update vehiculo
 	set ReservaNumero_reserva = 1
@@ -85,8 +99,7 @@ update vehiculo
 select *
 from reserva;
 
-select *
-from cliente;
+
 
 select*
 from vehiculo;
@@ -109,4 +122,8 @@ on vr.ClienteRut = c.Rut;
 
 select c2.*
 from cliente c1 join cliente c2 on c1.ClienteRut = c2.Rut
-where c1.Rut = 11111111;
+where c1.Rut = 123456789;
+
+select c.Rut, c.Nombre, c.Direccion, c.Telefono_domicilio, c.Telefono_movil
+from cliente c
+where ClienteRut = 987654321;

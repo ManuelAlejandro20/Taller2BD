@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(agregarReserva));
             this.label1 = new System.Windows.Forms.Label();
             this.checkedListBox2 = new System.Windows.Forms.CheckedListBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -37,9 +38,6 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
             this.Patente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Modelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,6 +45,9 @@
             this.Color = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PrecioAlquilerDiario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LitrosGasolina = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -149,34 +150,6 @@
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(801, 35);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(169, 160);
-            this.listBox1.TabIndex = 13;
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged_1);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(798, 19);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(126, 13);
-            this.label5.TabIndex = 14;
-            this.label5.Text = "Vehículos seleccionados";
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(801, 201);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(169, 23);
-            this.button2.TabIndex = 15;
-            this.button2.Text = "Borrar Vehículo";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // Patente
             // 
             this.Patente.Frozen = true;
@@ -244,12 +217,40 @@
             this.LitrosGasolina.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.LitrosGasolina.Width = 75;
             // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(801, 35);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(169, 160);
+            this.listBox1.TabIndex = 13;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged_1);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(798, 19);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(126, 13);
+            this.label5.TabIndex = 14;
+            this.label5.Text = "Vehículos seleccionados";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(801, 201);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(169, 23);
+            this.button2.TabIndex = 15;
+            this.button2.Text = "Borrar Vehículo";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // agregarReserva
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
-            this.ClientSize = new System.Drawing.Size(1047, 237);
+            this.ClientSize = new System.Drawing.Size(1035, 237);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label5);
@@ -263,6 +264,7 @@
             this.Controls.Add(this.checkedListBox2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "agregarReserva";
             this.Text = "Agregar Reserva";

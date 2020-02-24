@@ -20,6 +20,7 @@ namespace ArriendosNorteGrandeSA.Formularios
             InitializeComponent();
 
             dataGridView1.RowsDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
             string cadena = "server=localhost;port=3306;userid=root;password=admin123;database=mysql";

@@ -19,3 +19,10 @@ C:\Users\Manolo\source\repos\ArriendosNorteGrandeSA\ArriendosNorteGrandeSA\obj\D
 C:\Users\Manolo\source\repos\ArriendosNorteGrandeSA\ArriendosNorteGrandeSA\obj\Debug\ArriendosNorteGrandeSA.Formularios.consultas.resources
 C:\Users\Manolo\source\repos\ArriendosNorteGrandeSA\ArriendosNorteGrandeSA\obj\Debug\ArriendosNorteGrandeSA.Formularios.estadisticas.resources
 C:\Users\Manolo\source\repos\ArriendosNorteGrandeSA\ArriendosNorteGrandeSA\obj\Debug\ArriendosNorteGrandeSA.Formularios.consultaCuatro.resources
+C:\Users\Manolo\source\repos\ArriendosNorteGrandeSA\ArriendosNorteGrandeSA\obj\Debug\ArriendosNorteGrandeSA.Formularios.consultaSiete.resources
+C:\Users\Manolo\source\repos\ArriendosNorteGrandeSA\ArriendosNorteGrandeSA\obj\Debug\ArriendosNorteGrandeSA.Formularios.auth.resources
+C:\Users\Manolo\source\repos\ArriendosNorteGrandeSA\ArriendosNorteGrandeSA\obj\Debug\ArriendosNorteGrandeSA.Formularios.agregarCliente.resources
+C:\Users\Manolo\source\repos\ArriendosNorteGrandeSA\ArriendosNorteGrandeSA\obj\Debug\ArriendosNorteGrandeSA.Formularios.agregarVehiculo.resources
+C:\Users\Manolo\source\repos\ArriendosNorteGrandeSA\ArriendosNorteGrandeSA\obj\Debug\ArriendosNorteGrandeSA.Formularios.eliminarVehiculo.resources
+C:\Users\Manolo\source\repos\ArriendosNorteGrandeSA\ArriendosNorteGrandeSA\obj\Debug\ArriendosNorteGrandeSA.Formularios.eliminarCliente.resources
+C:\Users\Manolo\source\repos\ArriendosNorteGrandeSA\ArriendosNorteGrandeSA\obj\Debug\ArriendosNorteGrandeSA.Formularios.actualizarCliente.resources

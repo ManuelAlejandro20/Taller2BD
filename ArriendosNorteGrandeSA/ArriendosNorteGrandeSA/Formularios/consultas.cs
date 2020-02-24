@@ -84,7 +84,7 @@ namespace ArriendosNorteGrandeSA.Formularios
                     consulta = "select * from vehiculosnortegrandedb.cliente where vehiculosnortegrandedb.cliente.rut =" + rut;
                     cmd = new MySqlCommand(consulta, conexionBD);
                     reader = cmd.ExecuteReader();
-                    
+
                     while (reader.Read()) {
 
                         rut = rutFormal(rut);
@@ -99,8 +99,9 @@ namespace ArriendosNorteGrandeSA.Formularios
                                 "RUT CLIENTE QUE LO ESTA AVALANDO : " + rut2 + "\n"
                                 ;
                     }
+                    conexionBD.Close();
                     if (datos == "") {
-                        MessageBox.Show("¡Cliente no registrado!", "Consulta", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        MessageBox.Show("¡Cliente no registrado!", "Consulta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
                     MessageBox.Show(datos, "Consulta", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
@@ -109,7 +110,7 @@ namespace ArriendosNorteGrandeSA.Formularios
                     string patente = textBox1.Text.ToUpper();
                     string reserva = "";
 
-                    consulta = "select * from vehiculosnortegrandedb.vehiculo where vehiculosnortegrandedb.vehiculo.patente = '" + patente + "'" ;
+                    consulta = "select * from vehiculosnortegrandedb.vehiculo where vehiculosnortegrandedb.vehiculo.patente = '" + patente + "'";
                     cmd = new MySqlCommand(consulta, conexionBD);
                     reader = cmd.ExecuteReader();
 
@@ -133,14 +134,14 @@ namespace ArriendosNorteGrandeSA.Formularios
                                 ;
                     }
                     if (datos == "") {
-                        MessageBox.Show("¡Vehículo no registrado!", "Consulta", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        MessageBox.Show("¡Vehículo no registrado!", "Consulta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
                     MessageBox.Show(datos, "Consulta", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     break;
                 case 2:
                     int numRes = Convert.ToInt32(textBox1.Text);
-                    
+
                     consulta = "select * from vehiculosnortegrandedb.reserva where vehiculosnortegrandedb.reserva.numero_reserva = " + numRes;
                     cmd = new MySqlCommand(consulta, conexionBD);
                     reader = cmd.ExecuteReader();
@@ -148,7 +149,7 @@ namespace ArriendosNorteGrandeSA.Formularios
                     DateTime fechaInicio;
                     DateTime fechaFinal;
                     string rutStr;
-                    
+
                     while (reader.Read()) {
 
                         fechaInicio = Convert.ToDateTime(reader.GetString(1));
@@ -165,14 +166,14 @@ namespace ArriendosNorteGrandeSA.Formularios
                     }
                     if (datos == "")
                     {
-                        MessageBox.Show("¡Reserva no registrada!", "Consulta", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        MessageBox.Show("¡Reserva no registrada!", "Consulta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
                     MessageBox.Show(datos, "Consulta", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     break;
                 case 3:
                     rut = textBox1.Text;
-                    
+
                     consulta = "select * from vehiculosnortegrandedb.cliente where vehiculosnortegrandedb.cliente.rut =" + rut;
                     cmd = new MySqlCommand(consulta, conexionBD);
                     reader = cmd.ExecuteReader();
@@ -235,12 +236,12 @@ namespace ArriendosNorteGrandeSA.Formularios
                         MessageBox.Show("¡Este vehículo no pertenece a ninguna reserva!", "Consulta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
-                    
+
                     conexionBD = new MySqlConnection(cadena);
                     conexionBD.Open();
-                    
-                    consulta = "select c.* "+
-                               "from(select r.ClienteRut from vehiculosnortegrandedb.vehiculo v join vehiculosnortegrandedb.reserva r on v.reservanumero_reserva = r.numero_reserva where v.patente = '"+ patente + "') vr join vehiculosnortegrandedb.cliente c " +
+
+                    consulta = "select c.* " +
+                               "from(select r.ClienteRut from vehiculosnortegrandedb.vehiculo v join vehiculosnortegrandedb.reserva r on v.reservanumero_reserva = r.numero_reserva where v.patente = '" + patente + "') vr join vehiculosnortegrandedb.cliente c " +
                                "on vr.ClienteRut = c.Rut";
 
                     cmd = new MySqlCommand(consulta, conexionBD);
@@ -263,10 +264,86 @@ namespace ArriendosNorteGrandeSA.Formularios
                     conexionBD.Close();
                     break;
                 case 5:
-                    MessageBox.Show("6", "Consulta", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    if (textBox1.Text.Length != 9)
+                    {
+                        return;
+                    }
+                    rut = textBox1.Text;
+                    rut2 = "";
+
+                    consulta = "select c2.* " +
+                               "from vehiculosnortegrandedb.cliente c1 join vehiculosnortegrandedb.cliente c2 on c1.clienterut = c2.rut " +
+                               "where c1.rut = '" + rut + "';";
+                    cmd = new MySqlCommand(consulta, conexionBD);
+                    reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+
+                        rut = rutFormal(reader.GetString(0));
+                        rut2 = reader.GetString(5);
+                        rut2 = rutFormal(rut2);
+
+                        datos = "RUT CLIENTE : " + rut + "\n" +
+                                "NOMBRE CLIENTE : " + reader.GetString(1) + "\n" +
+                                "DIRECCIÓN : " + reader.GetString(2) + "\n" +
+                                "TELÉFONO DOMICILIO : " + reader.GetString(3) + "\n" +
+                                "TELÉFONO MÓVIL : " + reader.GetString(4) + "\n" +
+                                "RUT CLIENTE QUE LO ESTA AVALANDO : " + rut2 + "\n"
+                                ;
+                    }
+                    conexionBD.Close();
+                    if (datos == "")
+                    {
+                        MessageBox.Show("¡Cliente no registrado!", "Consulta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                    MessageBox.Show(datos, "Consulta", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     break;
                 default:
-                    MessageBox.Show("7", "Consulta", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    if (textBox1.Text.Length != 9)
+                    {
+                        return;
+                    }
+                    rut = textBox1.Text;
+                    rut2 = "";
+
+                    consulta = "select * from vehiculosnortegrandedb.cliente where vehiculosnortegrandedb.cliente.rut =" + rut;
+                    cmd = new MySqlCommand(consulta, conexionBD);
+                    reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        datos = reader.GetString(0);
+                    }
+                    conexionBD.Close();
+                    if (datos == "")
+                    {
+                        MessageBox.Show("¡Cliente no registrado!", "Consulta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+
+                    datos = "";
+                    consulta = "select c.rut " +
+                               "from vehiculosnortegrandedb.cliente c " +
+                               "where c.clienterut ='" + rut + "'";
+
+                    conexionBD = new MySqlConnection(cadena);
+                    conexionBD.Open();
+
+                    cmd = new MySqlCommand(consulta, conexionBD);
+                    reader = cmd.ExecuteReader();
+                    while (reader.Read()) {
+                        datos = reader.GetString(0);
+                    }
+                    conexionBD.Close();
+                    if (datos == "") {
+                        MessageBox.Show("¡Este cliente no ha avalado a ningún otro cliente!", "Consulta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+
+                    Formularios.consultaSiete cs = new Formularios.consultaSiete(rut);
+                    cs.ShowDialog();
                     break;
             }
         }

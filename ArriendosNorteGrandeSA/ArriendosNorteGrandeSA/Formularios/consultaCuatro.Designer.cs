@@ -28,15 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(consultaCuatro));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.NumeroReserva = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PrecioFinal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaFinal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,42 +62,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(320, 225);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(368, 42);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(180, 225);
-            this.listBox1.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(25, 26);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(102, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Reservas realizadas";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(365, 26);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(106, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Vehículos asociados";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(172, 286);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(237, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Aceptar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // NumeroReserva
             // 
@@ -134,6 +99,42 @@
             this.FechaFinal.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.FechaFinal.Width = 75;
             // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(368, 42);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(180, 225);
+            this.listBox1.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(25, 26);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(102, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Reservas realizadas";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(365, 26);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(106, 13);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Vehículos asociados";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(172, 286);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(237, 23);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Aceptar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // consultaCuatro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -145,6 +146,7 @@
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimizeBox = false;
             this.Name = "consultaCuatro";
             this.Text = " ";

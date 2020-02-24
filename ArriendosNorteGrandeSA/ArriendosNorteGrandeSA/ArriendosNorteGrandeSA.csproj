@@ -56,11 +56,35 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\actualizarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\actualizarCliente.Designer.cs">
+      <DependentUpon>actualizarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\agregarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\agregarCliente.Designer.cs">
+      <DependentUpon>agregarCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\agregarReserva.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\agregarReserva.Designer.cs">
       <DependentUpon>agregarReserva.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\agregarVehiculo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\agregarVehiculo.Designer.cs">
+      <DependentUpon>agregarVehiculo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\auth.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\auth.Designer.cs">
+      <DependentUpon>auth.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\consultaCuatro.cs">
       <SubType>Form</SubType>
@@ -74,11 +98,29 @@
     <Compile Include="Formularios\consultas.Designer.cs">
       <DependentUpon>consultas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\consultaSiete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\consultaSiete.Designer.cs">
+      <DependentUpon>consultaSiete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\eliminarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\eliminarCliente.Designer.cs">
+      <DependentUpon>eliminarCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\eliminarReserva.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\eliminarReserva.Designer.cs">
       <DependentUpon>eliminarReserva.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\eliminarVehiculo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\eliminarVehiculo.Designer.cs">
+      <DependentUpon>eliminarVehiculo.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\estadisticas.cs">
       <SubType>Form</SubType>
@@ -91,8 +133,20 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\actualizarCliente.resx">
+      <DependentUpon>actualizarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\agregarCliente.resx">
+      <DependentUpon>agregarCliente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\agregarReserva.resx">
       <DependentUpon>agregarReserva.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\agregarVehiculo.resx">
+      <DependentUpon>agregarVehiculo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\auth.resx">
+      <DependentUpon>auth.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\consultaCuatro.resx">
       <DependentUpon>consultaCuatro.cs</DependentUpon>
@@ -100,8 +154,17 @@
     <EmbeddedResource Include="Formularios\consultas.resx">
       <DependentUpon>consultas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\consultaSiete.resx">
+      <DependentUpon>consultaSiete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\eliminarCliente.resx">
+      <DependentUpon>eliminarCliente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\eliminarReserva.resx">
       <DependentUpon>eliminarReserva.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\eliminarVehiculo.resx">
+      <DependentUpon>eliminarVehiculo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\estadisticas.resx">
       <DependentUpon>estadisticas.cs</DependentUpon>
@@ -114,6 +177,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -128,6 +192,8 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\Travel-BMV-icon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
