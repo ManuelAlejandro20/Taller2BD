@@ -63,7 +63,7 @@ namespace ArriendosNorteGrandeSA.Formularios
 
             DataGridViewRow sr = dataGridView1.Rows[index];
             string numRes = sr.Cells[0].Value.ToString();
-            string str = "select * from vehiculosnortegrandedb.vehiculo where vehiculosnortegrandedb.vehiculo.reservanumero_reserva=" + numRes;
+            string str = "select * from vehiculosnortegrandedb.reserva_vehiculo rv join vehiculosnortegrandedb.vehiculo v on rv.patente = v.patente where rv.numero_reserva=" + numRes;
             string cadena = "server=localhost;port=3306;userid=root;password=admin123;database=mysql";
 
             MySqlConnection conexionBD = new MySqlConnection(cadena);
@@ -75,7 +75,7 @@ namespace ArriendosNorteGrandeSA.Formularios
             while (reader.Read())
             {
 
-                resVeh = reader.GetString(0) + "  " + reader.GetString(1) + "  " + reader.GetString(2) + "  " + reader.GetString(4);
+                resVeh = reader.GetString(3) + "  " + reader.GetString(4) + "  " + reader.GetString(5) + "  " + reader.GetString(7);
                 listBox1.Items.Insert(0, resVeh);
 
             }

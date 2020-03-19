@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -108,29 +109,18 @@ namespace ArriendosNorteGrandeSA.Formularios
                     break;
                 case 1:
                     string patente = textBox1.Text.ToUpper();
-                    string reserva = "";
 
                     consulta = "select * from vehiculosnortegrandedb.vehiculo where vehiculosnortegrandedb.vehiculo.patente = '" + patente + "'";
                     cmd = new MySqlCommand(consulta, conexionBD);
                     reader = cmd.ExecuteReader();
 
                     while (reader.Read()) {
-                        try
-                        {
-                            reserva = reader.GetString(7);
-
-                        }
-                        catch (Exception) {
-                            reserva = "No tiene";
-                        }
                         datos = "PATENTE : " + reader.GetString(0) + "\n" +
                                 "MODELO : " + reader.GetString(1) + "\n" +
                                 "MARCA : " + reader.GetString(2) + "\n" +
                                 "NÚMERO DE MOTOR : " + reader.GetString(3) + "\n" +
                                 "NÚMERO DE MOTOR : " + reader.GetString(4) + "\n" +
-                                "PRECIO ALQUILER DIARIO : " + reader.GetString(5) + "\n" +
-                                "LITROS DE GASOLINA EN EL TANQUE : " + reader.GetString(6) + "\n" +
-                                "NÚMERO DE RESERVA : " + reserva + "\n"
+                                "PRECIO ALQUILER DIARIO : " + reader.GetString(5) + "\n"
                                 ;
                     }
                     if (datos == "") {
@@ -196,6 +186,7 @@ namespace ArriendosNorteGrandeSA.Formularios
                     reader = cmd.ExecuteReader();
                     while (reader.Read())
                     {
+                        //Esto solo sirve para asegurarme que la reserva exista 
                         datos = reader.GetString(0);
                     }
                     conexionBD.Close();
@@ -210,21 +201,12 @@ namespace ArriendosNorteGrandeSA.Formularios
                     break;
                 case 4:
                     patente = textBox1.Text.ToUpper();
-                    reserva = "";
 
                     consulta = "select * from vehiculosnortegrandedb.vehiculo where vehiculosnortegrandedb.vehiculo.patente = '" + patente + "'";
                     cmd = new MySqlCommand(consulta, conexionBD);
                     reader = cmd.ExecuteReader();
                     while (reader.Read()) {
-                        try
-                        {
-                            reserva = reader.GetString(7);
-
-                        }
-                        catch (Exception)
-                        {
-                            reserva = "No tiene";
-                        }
+                        //Me aseguro que la patente ingresada existe
                         datos = reader.GetString(0);
                     }
                     conexionBD.Close();
@@ -232,36 +214,52 @@ namespace ArriendosNorteGrandeSA.Formularios
                         MessageBox.Show("¡Vehículo no registrado!", "Consulta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
-                    if (reserva == "No tiene") {
-                        MessageBox.Show("¡Este vehículo no pertenece a ninguna reserva!", "Consulta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        return;
-                    }
 
-                    conexionBD = new MySqlConnection(cadena);
+                    ArrayList numResList = new ArrayList();
+                    consulta = "select * from vehiculosnortegrandedb.reserva_vehiculo where patente = '" + patente + "'";
                     conexionBD.Open();
-
-                    consulta = "select c.* " +
-                               "from(select r.ClienteRut from vehiculosnortegrandedb.vehiculo v join vehiculosnortegrandedb.reserva r on v.reservanumero_reserva = r.numero_reserva where v.patente = '" + patente + "') vr join vehiculosnortegrandedb.cliente c " +
-                               "on vr.ClienteRut = c.Rut";
-
                     cmd = new MySqlCommand(consulta, conexionBD);
                     reader = cmd.ExecuteReader();
                     while (reader.Read())
                     {
-                        rut = rutFormal(reader.GetString(0));
-                        rut2 = rutFormal(reader.GetString(5));
-
-                        datos = "RUT CLIENTE : " + rut + "\n" +
-                                "NOMBRE CLIENTE : " + reader.GetString(1) + "\n" +
-                                "DIRECCIÓN : " + reader.GetString(2) + "\n" +
-                                "TELÉFONO DOMICILIO : " + reader.GetString(3) + "\n" +
-                                "TELÉFONO MÓVIL : " + reader.GetString(4) + "\n" +
-                                "RUT CLIENTE QUE LO ESTA AVALANDO : " + rut2 + "\n"
-                                ;
+                        if (reader.GetString(0) != "") {
+                            numResList.Add(reader.GetString(0));
+                        }
                     }
-
-                    MessageBox.Show(datos, "Consulta", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     conexionBD.Close();
+                    if (numResList.Count == 0)
+                    {
+                        MessageBox.Show("¡Este vehículo no pertenece a ninguna reserva!", "Consulta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                    foreach (string numReserva in numResList)
+                    {
+                        conexionBD = new MySqlConnection(cadena);
+                        conexionBD.Open();
+
+                        consulta = "select c.* " +
+                                   "from vehiculosnortegrandedb.reserva r join vehiculosnortegrandedb.cliente c on r.clienterut = c.rut " +
+                                   "where r.numero_reserva=" + numReserva;
+
+                        cmd = new MySqlCommand(consulta, conexionBD);
+                        reader = cmd.ExecuteReader();
+                        while (reader.Read())
+                        {
+                            rut = rutFormal(reader.GetString(0));
+                            rut2 = rutFormal(reader.GetString(5));
+
+                            datos = "RUT CLIENTE : " + rut + "\n" +
+                                    "NOMBRE CLIENTE : " + reader.GetString(1) + "\n" +
+                                    "DIRECCIÓN : " + reader.GetString(2) + "\n" +
+                                    "TELÉFONO DOMICILIO : " + reader.GetString(3) + "\n" +
+                                    "TELÉFONO MÓVIL : " + reader.GetString(4) + "\n" +
+                                    "RUT CLIENTE QUE LO ESTA AVALANDO : " + rut2 + "\n"
+                                    ;
+                        }
+
+                        MessageBox.Show(datos, "Consulta", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        conexionBD.Close();
+                    }
                     break;
                 case 5:
                     if (textBox1.Text.Length != 9)

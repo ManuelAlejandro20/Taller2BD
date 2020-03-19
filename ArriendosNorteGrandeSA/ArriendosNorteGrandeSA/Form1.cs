@@ -16,6 +16,7 @@ namespace ArriendosNorteGrandeSA
         public Vista1()
         {
             InitializeComponent();
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -126,6 +127,11 @@ namespace ArriendosNorteGrandeSA
             menuStrip1.Items.RemoveAt(3);
             menuStrip1.Items.RemoveAt(3);
             menuStrip1.Items.Add("Modificar clientes / vehículos", null, insertarToolStripMenuItem_Click);
+        }
+
+        private void reservaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -38,7 +38,6 @@
             this.NumeroMotor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Color = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PrecioAlquilerDiario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LitrosGasolina = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,15 +54,15 @@
             this.Marca,
             this.NumeroMotor,
             this.Color,
-            this.PrecioAlquilerDiario,
-            this.LitrosGasolina});
+            this.PrecioAlquilerDiario});
             this.dataGridView1.Location = new System.Drawing.Point(56, 40);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(667, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(574, 150);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // label1
             // 
@@ -76,7 +75,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(331, 202);
+            this.button1.Location = new System.Drawing.Point(279, 199);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(133, 23);
             this.button1.TabIndex = 2;
@@ -134,19 +133,11 @@
             this.PrecioAlquilerDiario.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.PrecioAlquilerDiario.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // LitrosGasolina
-            // 
-            this.LitrosGasolina.HeaderText = "LitrosGasolina";
-            this.LitrosGasolina.Name = "LitrosGasolina";
-            this.LitrosGasolina.ReadOnly = true;
-            this.LitrosGasolina.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.LitrosGasolina.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
             // eliminarVehiculo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(780, 234);
+            this.ClientSize = new System.Drawing.Size(685, 234);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
@@ -165,14 +156,13 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Patente;
         private System.Windows.Forms.DataGridViewTextBoxColumn Modelo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Marca;
         private System.Windows.Forms.DataGridViewTextBoxColumn NumeroMotor;
         private System.Windows.Forms.DataGridViewTextBoxColumn Color;
         private System.Windows.Forms.DataGridViewTextBoxColumn PrecioAlquilerDiario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LitrosGasolina;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
     }
 }

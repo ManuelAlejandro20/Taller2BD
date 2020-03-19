@@ -22,14 +22,13 @@ namespace ArriendosNorteGrandeSA.Formularios
             MySqlConnection conexionBD = new MySqlConnection(cadena);
             conexionBD.Open();
             MySqlCommand cmd = new MySqlCommand("select * " +
-                                   "from vehiculosnortegrandedb.vehiculo " +
-                                   "where vehiculosnortegrandedb.vehiculo.reservanumero_reserva is null", conexionBD);
+                                   "from vehiculosnortegrandedb.vehiculo ", conexionBD);
             MySqlDataReader reader = cmd.ExecuteReader();
 
             while (reader.Read())
             {
                 dataGridView1.Rows.Add(reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4)
-                    , reader.GetString(5), reader.GetString(6));
+                    , reader.GetString(5));
 
             }
 
@@ -64,6 +63,11 @@ namespace ArriendosNorteGrandeSA.Formularios
                 }
 
             }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

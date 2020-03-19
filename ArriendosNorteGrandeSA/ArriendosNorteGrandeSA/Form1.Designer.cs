@@ -70,6 +70,7 @@
             this.eliminarReservaToolStripMenuItem});
             this.reservaToolStripMenuItem.Name = "reservaToolStripMenuItem";
             resources.ApplyResources(this.reservaToolStripMenuItem, "reservaToolStripMenuItem");
+            this.reservaToolStripMenuItem.Click += new System.EventHandler(this.reservaToolStripMenuItem_Click);
             // 
             // agregarReservaNuevaToolStripMenuItem
             // 

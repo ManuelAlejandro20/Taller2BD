@@ -26,3 +26,8 @@ C:\Users\Manolo\source\repos\ArriendosNorteGrandeSA\ArriendosNorteGrandeSA\obj\D
 C:\Users\Manolo\source\repos\ArriendosNorteGrandeSA\ArriendosNorteGrandeSA\obj\Debug\ArriendosNorteGrandeSA.Formularios.eliminarVehiculo.resources
 C:\Users\Manolo\source\repos\ArriendosNorteGrandeSA\ArriendosNorteGrandeSA\obj\Debug\ArriendosNorteGrandeSA.Formularios.eliminarCliente.resources
 C:\Users\Manolo\source\repos\ArriendosNorteGrandeSA\ArriendosNorteGrandeSA\obj\Debug\ArriendosNorteGrandeSA.Formularios.actualizarCliente.resources
+C:\Users\Manolo\source\repos\ArriendosNorteGrandeSA\ArriendosNorteGrandeSA\bin\Debug\ArriendosNorteGrandeSA.exe.manifest
+C:\Users\Manolo\source\repos\ArriendosNorteGrandeSA\ArriendosNorteGrandeSA\bin\Debug\ArriendosNorteGrandeSA.application
+C:\Users\Manolo\source\repos\ArriendosNorteGrandeSA\ArriendosNorteGrandeSA\obj\Debug\ArriendosNorteGrandeSA.TrustInfo.xml
+C:\Users\Manolo\source\repos\ArriendosNorteGrandeSA\ArriendosNorteGrandeSA\obj\Debug\ArriendosNorteGrandeSA.exe.manifest
+C:\Users\Manolo\source\repos\ArriendosNorteGrandeSA\ArriendosNorteGrandeSA\obj\Debug\ArriendosNorteGrandeSA.application

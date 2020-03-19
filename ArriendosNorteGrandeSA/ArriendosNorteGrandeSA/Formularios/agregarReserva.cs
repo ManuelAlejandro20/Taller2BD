@@ -48,13 +48,12 @@ namespace ArriendosNorteGrandeSA.Formularios
             conexionBD = new MySqlConnection(cadena);
             conexionBD.Open();
             cmd = new MySqlCommand("select * " +
-                                   "from vehiculosnortegrandedb.vehiculo " +
-                                   "where vehiculosnortegrandedb.vehiculo.reservanumero_reserva is null", conexionBD);
+                                   "from vehiculosnortegrandedb.vehiculo ", conexionBD);
             reader = cmd.ExecuteReader();
 
             while (reader.Read()) {
                 dataGridView1.Rows.Add(reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4)
-                    , reader.GetString(5), reader.GetString(6));
+                    , reader.GetString(5));
                
             }
 
@@ -87,7 +86,7 @@ namespace ArriendosNorteGrandeSA.Formularios
         {
             if (checkedListBox2.CheckedItems.Count == 0)
             {
-                MessageBox.Show("Selecciona un cliente porfavor", "Mensaje",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                MessageBox.Show("Selecciona un cliente porfavor", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             if (listBox1.Items.Count == 0) {
@@ -102,6 +101,8 @@ namespace ArriendosNorteGrandeSA.Formularios
             string cadena = "server=localhost;port=3306;userid=root;password=admin123;database=mysql";
             string rutStr = "";
             string patente = "";
+            TimeSpan days = dateTimePicker2.Value - dateTimePicker1.Value;
+            int daysInt = days.Days + 1;
 
             List<string> patentes = new List<string>();
             
@@ -122,8 +123,7 @@ namespace ArriendosNorteGrandeSA.Formularios
                 foreach (DataGridViewRow row in dataGridView1.Rows)
                 {
                     if (row.Cells["Patente"].Value.ToString() == patente) {
-                        precioFinal += Convert.ToInt32(row.Cells["PrecioAlquilerDiario"].Value.ToString());
-                        precioFinal += Convert.ToInt32(row.Cells["LitrosGasolina"].Value.ToString()) * 1000;
+                        precioFinal += Convert.ToInt32(row.Cells["PrecioAlquilerDiario"].Value.ToString()) * daysInt;
                     } 
                 }
                 patente = "";
@@ -163,14 +163,17 @@ namespace ArriendosNorteGrandeSA.Formularios
 
 
             string update = "";
+            Random r = new Random();
+            int rInt;
 
             for (int i = 0; i < patentes.Count; i++) {
                 conexionBD = new MySqlConnection(cadena);
                 conexionBD.Open();
+                rInt = r.Next(0, 50);
 
-                update = "update vehiculosnortegrandedb.vehiculo" + " " +
-                         "set vehiculosnortegrandedb.vehiculo.reservanumero_reserva = " + numRes + " "+
-                         "where vehiculosnortegrandedb.vehiculo.patente =  '" + patentes[i] + "';";
+                update = "insert into vehiculosnortegrandedb.reserva_vehiculo(numero_reserva, patente, litros_gasolina) " +
+                         "value " +
+                         "(" + numRes + ",'" + patentes[i] + "'," + rInt + ");";
                 cmd = new MySqlCommand(update, conexionBD);
                 cmd.ExecuteNonQuery();
 

@@ -26,12 +26,12 @@ namespace ArriendosNorteGrandeSA.Formularios
         private void button1_Click(object sender, EventArgs e)
         {
             if (textBox1.Text.Length == 0 || textBox2.Text.Length == 0 || textBox3.Text.Length == 0 || textBox4.Text.Length == 0 ||
-                textBox5.Text.Length == 0 || textBox6.Text.Length == 0 || textBox7.Text.Length == 0)
+                textBox5.Text.Length == 0 || textBox6.Text.Length == 0)
             {
                 MessageBox.Show("¡Completa todos los campos para agregar al nuevo vehículo porfavor!", "Agregar vehículo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            if (!textBox4.Text.All(char.IsDigit) || !textBox6.Text.All(char.IsDigit) || !textBox7.Text.All(char.IsDigit))
+            if (!textBox4.Text.All(char.IsDigit) || !textBox6.Text.All(char.IsDigit))
             {
                 MessageBox.Show("¡Ingresa sólo números en los campos que lo requieran porfavor!", "Agregar vehículo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -58,9 +58,9 @@ namespace ArriendosNorteGrandeSA.Formularios
                 return;
             }
 
-            string insert = "insert into vehiculosnortegrandedb.vehiculo(patente, modelo, marca, numero_motor, color, precio_alquiler_diario, litros_gasolina) " +
+            string insert = "insert into vehiculosnortegrandedb.vehiculo(patente, modelo, marca, numero_motor, color, precio_alquiler_diario) " +
                               "values " +
-                              "('" + patente + "','" + textBox2.Text + "','" + textBox3.Text + "','" + textBox4.Text + "','" + textBox5.Text + "','" + textBox6.Text + "','"+ textBox7.Text + "');";
+                              "('" + patente + "','" + textBox2.Text + "','" + textBox3.Text + "','" + textBox4.Text + "','" + textBox5.Text + "','" + textBox6.Text +  "');";
 
             conexionBD = new MySqlConnection(cadena);
             conexionBD.Open();
